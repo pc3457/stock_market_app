@@ -1,0 +1,87 @@
+/* Import a Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+body {
+    font-family: 'Open+Sans', sans-serif;
+    background: #f7f7f7;
+    color: #333;
+}
+
+#tickers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.stock-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.stock-box h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.stock-box:hover .stock-link {
+    text-decoration: none;
+}
+
+
+.stock-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.stock-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Flashing backgrounds for stock changes */
+.red-flash {
+    background-color: #ffe5e5;
+}
+.green-flash {
+    background-color: #e5ffe5;
+}
+.gray-flash {
+    background-color: #f0f0f0;
+}
+
+/* Text colors for stock values */
+.dark-red { color: #a94442; }
+.red { color: #d9534f; }
+.gray { color: #636c72; }
+.green { color: #5cb85c; }
+.dark-green { color: #3c763d; }
+
+/* Button Styles */
+button {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    #tickers-grid {
+        grid-template-columns: 1fr;
+    }
+}
